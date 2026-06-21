@@ -35,15 +35,11 @@ create table contatos (
     telefone text not null
 );
 
--- Inserção de contatos fictícios
-insert into contatos (nome, telefone) values
-('Carlos Eduardo Silva', '5511999991111'),
-('Ana Beatriz Souza', '5521988882222'),
-('Marcos Antônio Pereira', '5531977773333'),
-('Juliana Maria Oliveira', '5541966664444'),
-('Lucas Rafael Santos', '5561955555555'),
-('Fernanda Costa Lima', '5581944446666'),
-('Rodrigo Alves Almeida', '5571933337777');
+-- Inserção de contatos para teste de disparo (Substitua pelos seus números reais)
+insert into contatos (nome, telefone) values 
+('Seu Nome', '5535999999999'),
+('Contato Teste 2', '5535988888888'),
+('Contato Teste 3', '5535977777777');
 ```
 
 ---

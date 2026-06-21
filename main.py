@@ -18,14 +18,15 @@ ZAPI_TOKEN = os.getenv("ZAPI_TOKEN")
 ZAPI_CLIENT_TOKEN = os.getenv("ZAPI_CLIENT_TOKEN")
 
 def buscar_contatos() -> list:
-    """Busca até 3 contatos cadastrados no Supabase via requisição HTTP direta."""
+    """Busca TODOS os contatos cadastrados no Supabase via requisição HTTP direta."""
     if not SUPABASE_URL or not SUPABASE_KEY:
         logging.error("Variáveis de ambiente do Supabase não configuradas no .env.")
         return []
     
     # Remove barras duplicadas da URL se houver
     url_base = SUPABASE_URL.strip().rstrip('/')
-    url = f"{url_base}/rest/v1/contatos?select=nome,telefone&limit=3"
+    # Alteração aqui: removido o &limit=3 do final da URL para trazer todos
+    url = f"{url_base}/rest/v1/contatos?select=nome,telefone"
     
     headers = {
         "apikey": SUPABASE_KEY.strip(),
